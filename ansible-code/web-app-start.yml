@@ -1,0 +1,21 @@
+---
+- hosts: web
+
+  gather_facts: yes
+
+  become: true
+
+  tasks:
+  - name: install Nginx
+    apt: pkg=nginx state=present
+
+  - name: install Python
+    apt: pkg=python3 state=present
+
+  - name: copy web-dependencies.sh
+    copy: src=~/web-dependencies.sh dest=.
+
+  - name: run script
+    shell: |
+      chmod +x web-dependencies.sh
+      bash web-dependencies.sh
