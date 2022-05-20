@@ -1,0 +1,23 @@
+# Creating a playbook to start app in web machine.
+# YAML YML file starts with three dashes---
+---
+
+# Where do we want to run app?
+- hosts: web
+
+# do we want to see logs
+  gather_facts: yes
+
+# What permissions do we need to run this playbook
+  become: true
+  # used for sudo/admin
+
+# Using raw commands
+  tasks:
+  - name: run app
+    shell: |
+    cd app/
+    npm install
+    npm start
+
+# What should be the status of nginx once the playbook has run

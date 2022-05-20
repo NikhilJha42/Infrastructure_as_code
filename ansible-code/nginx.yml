@@ -1,0 +1,20 @@
+# Creating a playbook to configure Nginx web server in web machine.
+# YAML YML file starts with three dashes---
+---
+
+# Where do we want to install nginx
+- hosts: web
+
+# do we want to see logs
+  gather_facts: yes
+
+# What permissions do we need to run this playbook
+  become: true
+  # used for sudo/admin
+
+# what is the name of the package
+  tasks:
+  - name: install Nginx
+    apt: pkg=nginx state=present
+
+# What should be the status of nginx once the playbook has run
