@@ -1,6 +1,9 @@
 # Infrastructure_as_code
 
-# Using ansible with app
+This repository covers: 
+- The theory and benefits of Infrastructure as Code. 
+- Using Ansible and Terraform with the Sparta Global test app.
+# Ansible
 Dependencies: Vagrant and Virtual Box
 
 ## Getting started
@@ -11,3 +14,5 @@ Dependencies: Vagrant and Virtual Box
 - Return to controller VM, install `software-properties-common`
 - `sudo apt-add-repository ppa:ansible/ansible` then `sudo apt-get install ansible`
 - Check the ansible version
+
+# Terraform
