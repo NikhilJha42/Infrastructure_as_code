@@ -59,17 +59,7 @@ Pull and push models of configuration management
 # Ansible
 Dependencies: Vagrant and Virtual Box
 
-## Getting started
-
-- Upload the vagrantfile
-- Run `vagrant up` and check that you have three VMs running: controller, web and db.
-- ssh into each separately, and update/upgrade.
-- Return to controller VM, install `software-properties-common`
-- `sudo apt-add-repository ppa:ansible/ansible` then `sudo apt-get install ansible`
-- Check the ansible version
-
-# Terraform
-## Pseudo Code for first use of IaC
+## Pseudo Code for first use
 - Create 2/3 VMs with vagrant
 - Create Ansible controller with 2 agent nodes - web and db
 - Set up Ansible controller with required dependencies
@@ -83,6 +73,22 @@ Testing connection between controller and agent ndes
 - Ansible hosts/inventory
 - Ansible playbooks - playbook.yml
 - Why learn YML? - used with Ansible - Cliud Formation - AWS - Docker compose - Kubernetes
+
+## Getting started
+
+- Upload the vagrantfile
+- Run `vagrant up` and check that you have three VMs running: controller, web and db.
+- ssh into each separately, and update/upgrade.
+- Return to controller VM, install `software-properties-common`
+- `sudo apt-add-repository ppa:ansible/ansible` then `sudo apt-get install ansible`
+- Check the ansible version
+
+# Terraform
+- Install terraform
+- Create a folder and inside create the main.tf/network.tf/variables.tf files.
+- Run `terraform init`
+- `terraform plan` will raise any syntax errors or other problems
+- If there are no errors, `terraform apply` will implement the .tf files.
 
 ## Working with ansible
 - Use vagrant with the vagrantfile to launch the controller, web and db VMs.
