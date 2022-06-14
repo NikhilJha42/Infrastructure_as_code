@@ -64,10 +64,10 @@ Dependencies: Vagrant and Virtual Box
 - Create Ansible controller with 2 agent nodes - web and db
 - Set up Ansible controller with required dependencies
 - Test `ansible --version` 
-- Python --version 2.7 - ideally 3 or above
-- What is YAML/YML? (file.yaml or file.yml)
-- Adhoc commands withAnsible
-Testing connection between controller and agent ndes
+- Need Python 3 or above
+- YAML/YML files (file.yaml or file.yml)
+- Adhoc commands with Ansible
+- Testing connection between controller and agent ndes
 - ssh - vagrant - between VMs
 - Ansible folder/file structure
 - Ansible hosts/inventory
@@ -90,7 +90,5 @@ Testing connection between controller and agent ndes
 - `terraform plan` will raise any syntax errors or other problems
 - If there are no errors, `terraform apply` will implement the .tf files.
 
-## Working with ansible
-- Use vagrant with the vagrantfile to launch the controller, web and db VMs.
-- Install ansible.
-- Run the playbooks.
+## Terraform state
+- When terraform apply is run, Terraform checks whether anything has changed in the .tf files. It then makes only the necessary changes, and leaves everything else.
