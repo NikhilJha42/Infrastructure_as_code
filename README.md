@@ -59,29 +59,19 @@ Pull and push models of configuration management
 # Ansible
 Dependencies: Vagrant and Virtual Box
 
-## Pseudo Code for first use
-- Create 2/3 VMs with vagrant
-- Create Ansible controller with 2 agent nodes - web and db
-- Set up Ansible controller with required dependencies
-- Test `ansible --version` 
-- Need Python 3 or above
-- YAML/YML files (file.yaml or file.yml)
-- Adhoc commands with Ansible
-- Testing connection between controller and agent ndes
-- ssh - vagrant - between VMs
-- Ansible folder/file structure
-- Ansible hosts/inventory
-- Ansible playbooks - playbook.yml
-- Why learn YML? - used with Ansible - Cliud Formation - AWS - Docker compose - Kubernetes
+## What the following documentation will cover:
+- Create 3 VMs with vagrant - Ansible controller with 2 agent nodes, web and db.
+- Set up Ansible controller with required dependencies.
+- Testing connection between controller and agent ndes.
+- Ansible folder/file structure.
+- Ansible hosts.
+- Ansible playbooks - playbook.yml.
+- Using AWS with Ansible - Ansible vaults, EC2 playbooks.
+- Creating a hybrid architecture with Ansible.
 
-## Getting started
-
-- Upload the vagrantfile
-- Run `vagrant up` and check that you have three VMs running: controller, web and db.
-- ssh into each separately, and update/upgrade.
-- Return to controller VM, install `software-properties-common`
-- `sudo apt-add-repository ppa:ansible/ansible` then `sudo apt-get install ansible`
-- Check the ansible version
+- [Set Up](./documentation/Ansible_set_up.md)
+- [Using AWS with Ansible](./documentation/AWS_Ansible.md)
+- [Hybrid architecture](./documentation/hybrid.md)
 
 # Terraform
 - Install terraform
