@@ -59,26 +59,21 @@ Pull and push models of configuration management
 # Ansible
 Dependencies: Vagrant and Virtual Box
 
-## What the following documentation will cover:
-- Create 3 VMs with vagrant - Ansible controller with 2 agent nodes, web and db.
-- Set up Ansible controller with required dependencies.
-- Testing connection between controller and agent ndes.
-- Ansible folder/file structure.
-- Ansible hosts.
-- Ansible playbooks - playbook.yml.
-- Using AWS with Ansible - Ansible vaults, EC2 playbooks.
-- Creating a hybrid architecture with Ansible.
-
 - [Set Up](./documentation/Ansible_set_up.md)
 - [Using AWS with Ansible](./documentation/AWS_Ansible.md)
 - [Hybrid architecture](./documentation/hybrid.md)
 
-# Terraform
-- Install terraform
-- Create a folder and inside create the main.tf/network.tf/variables.tf files.
-- Run `terraform init`
-- `terraform plan` will raise any syntax errors or other problems
-- If there are no errors, `terraform apply` will implement the .tf files.
+## What the above documentation covers:
+- Setting up node app using Ansible controller and agent node.
+- Using AWS EC2 instances as agent nodes for app and database.
+- Creating a hybrid architecture with Ansible.
 
-## Terraform state
-- When terraform apply is run, Terraform checks whether anything has changed in the .tf files. It then makes only the necessary changes, and leaves everything else.
+![Ansible Set Up](./diagrams/Ansible_set_up.png)
+
+# Terraform
+- [Install terraform](https://www.terraform.io/downloads).
+- Make a directory and write the main.tf/network.tf/variables.tf files inside.
+- Run `terraform init`.
+- `terraform plan` will raise any syntax errors or other problems.
+- If there are no errors, `terraform apply` will implement the .tf files.
+- Terraform state: When terraform apply is run, Terraform checks whether anything has changed in the .tf files. It then makes only the necessary changes, and leaves everything else.
