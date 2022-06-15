@@ -3,6 +3,8 @@
 
 # ami, vpc, ec2, asg, subnet, ....
 
+# Replace ami-some_number and key_name with your own.
+
 variable "node_ami_id" {
     default = "ami-some_number"
 

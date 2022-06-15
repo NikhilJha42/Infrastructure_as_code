@@ -66,5 +66,3 @@ resource "aws_instance" "app_instance" {
   key_name = var.aws_key_name
   # step 2 - attach the file.pem
 }
-
-# step 1 - create a script to launch a VPC in AWS - then relaunc this ec2 instance in your vpc
