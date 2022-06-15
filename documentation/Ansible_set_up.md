@@ -1,6 +1,8 @@
 # Set Up Ansible
 
-1. Create a `vagrantfile` with the below configuration:
+![Ansible Set Up](../diagrams/Ansible_vagrant.png)
+
+>1. Create a `vagrantfile` with the below configuration:
 
 ```vagrant
 # -*- mode: ruby -*-
@@ -8,7 +10,7 @@
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
-# backwards compatibility). Please don't change it unless you know what
+# backwards compatibility). Please don't change it unless you know what you're doing.
 
 # MULTI SERVER/VMs environment 
 #
@@ -43,7 +45,7 @@ Vagrant.configure("2") do |config|
         #config.hostsupdater.aliases = ["development.db"]     
       end
     
-     # creating are Ansible controller
+     # creating our Ansible controller
       config.vm.define "controller" do |controller|
         
         controller.vm.box = "bento/ubuntu-18.04"
@@ -60,7 +62,7 @@ Vagrant.configure("2") do |config|
 ```
 > 2. Run `vagrant up`.
 
-> 3. ssh into each (using `vagrant ssh controller` etc.) and run update/upgrade commands.
+> 3. ssh into the controller (using `vagrant ssh controller` etc.) and run update/upgrade commands.
 
 > 4. Run these commands in the `controller` VM:
 ```bash
@@ -69,9 +71,9 @@ sudo apt-add-repository ppa:ansible/ansible
 sudo apt-get update -y
 sudo apt-get install ansible
 ```
-> 5. SSH into the two other VMs with the command `ssh vagrant@192.168.33.11` from the controller VM.
+> 5. SSH into the two other VMs with the command `ssh vagrant@192.168.33.11` and `ssh vagrant@192.168.33.12` from the controller VM.
 
-> 6. Go to the directory `/etc/ansible` in the controller VM with the `cd` command.
+> 6. Return to the controller, and go to the directory `/etc/ansible`.
 
 > 7. List directories nicely with this dependency: `sudo apt-get install tree -y`.
 

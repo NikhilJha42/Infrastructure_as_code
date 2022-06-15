@@ -53,7 +53,7 @@ ec2_secret_key: keyhere
 
 > 13. Check if it works with `sudo ansible-playbook tests.yml --ask-vault-pass`.
 
-> 14. In hosts, add the following lines (replace the relevant information like ips/keys):
+> 14. In hosts, add the following lines (later you will need to replace the relevant information for ips/keys):
 ```
 [local]
 localhost ansible_python_interpreter=/usr/local/bin/python3
@@ -231,13 +231,15 @@ ec2-instance-db ansible_host=ec2-34-245-27-166.eu-west-1.compute.amazonaws.com a
       npm start
     environment:
       DB_HOST: mongodb://34.245.27.166:27017/posts
+
+      tags: ['never', 'create_ec2']
 ```
 
 > 18. Run the command `sudo ansible-playbook playbook.yml --ask-vault-pass --tags create_ec2` and `sudo ansible-playbook set_up_app.yml --ask-vault-pass`.
 
 > 19. Go to the EC2's public IP. If it works, continue to the next part (seting up the DB). 
 
-> 20. Add the following `set_up_ec2_db` file (remember the security group and subnet):
+> 20. Create the following `set_up_ec2_db` file (remember the security group and subnet):
 
 ```yaml
 ---
@@ -297,7 +299,7 @@ ec2-instance-db ansible_host=ec2-34-245-27-166.eu-west-1.compute.amazonaws.com a
       tags: ['never', 'create_ec2']
 ```
 
-> 21. Run these commands after doing `sudo nano set_up_db.yml`:
+> 21. `sudo nano set_up_db.yml`:
 
 ```yaml
 ---

@@ -22,7 +22,7 @@ There are scenarios in which a database needs to be kept on business premises fo
   import_playbook: run_app.yml
 ```
 
-Use the command `sudo ansible-playbook run_playbooks.yml --ask-vault-pass` to run the above playbook. Ensure you have the below playbooks as well in your /etc/ansible directory.
+Use the command `sudo ansible-playbook run_playbooks.yml --ask-vault-pass` to run the above playbook, but only once you have written the playbooks that it imports:
 
 ## set_up_db.yml
 
