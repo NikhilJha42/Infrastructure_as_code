@@ -63,11 +63,6 @@ Dependencies: Vagrant and Virtual Box
 - [Using AWS with Ansible](./documentation/AWS_Ansible.md)
 - [Hybrid architecture](./documentation/hybrid.md)
 
-## What the above documentation covers:
-- Setting up node app using Ansible controller and agent node.
-- Using AWS EC2 instances as agent nodes for app and database.
-- Creating a hybrid architecture with Ansible.
-
 ![Ansible Set Up](./diagrams/Ansible_set_up.png)
 
 # Terraform
