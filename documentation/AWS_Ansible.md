@@ -48,15 +48,13 @@ ec2_secret_key: keyhere
 
 > 9. `cd ~/.ssh`.
 
-> 10. `sudo nano eng119.pem`.
+> 10. You will need to use an RSA key for AWS. Create a`file_name.pem` to store your public key in.
 
-> 11. Enter the public key and the private key. Use this to generate the public key: `ssh-keygen -y -f ~/.ssh/file_name.pem > ~/.ssh/file_name.pub`.
+> 11. Run `sudo chmod 400 file.pem`.
 
-> 12. `sudo chmod 400 eng119.pem`.
+> 12. Try to edit the key to check that it is read only.
 
-> 13. Check if it works with `sudo ansible-playbook tests.yml --ask-vault-pass`.
-
-> 14. In hosts, add the following lines (later you will need to replace the relevant information for ips/keys):
+> 13. In hosts, add the following lines (later you will need to replace the relevant information for ips/keys):
 ```
 [local]
 localhost ansible_python_interpreter=/usr/local/bin/python3
@@ -68,7 +66,7 @@ ec2-instance ansible_host=ec2-54-216-49-215.eu-west-1.compute.amazonaws.com ansi
 ec2-instance-db ansible_host=ec2-34-245-27-166.eu-west-1.compute.amazonaws.com ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/eng119.pem
 ```
 
-> 15. In `/etc/ansible`, create a file called `set_up_ec2.yml` and add the following contents (the `image` variable is for Ubuntu 18.04; the appropriate `security_group_id` and `subnet_id` will need to be copied from AWS - if you haven't deployed this app before you will need to create them. See my [AWS Repository](https://github.com/NikhilJha42/eng110_cloud_computing_AWS)).
+> 14. In `/etc/ansible`, create a file called `set_up_ec2.yml` and add the following contents (the `image` variable is for Ubuntu 18.04; the appropriate `security_group_id` and `subnet_id` will need to be copied from AWS - if you haven't deployed this app before you will need to create them. See my [AWS Repository](https://github.com/NikhilJha42/eng110_cloud_computing_AWS)).
 
 ```yaml
 ---
@@ -128,9 +126,9 @@ ec2-instance-db ansible_host=ec2-34-245-27-166.eu-west-1.compute.amazonaws.com a
       tags: ['never', 'create_ec2']
 ```
 
-> 16. Test your connection with `sudo ansible aws -m ping --ask-vault-pass` (after you have updated the IP in hosts).
+> 15. Test your connection with `sudo ansible aws -m ping --ask-vault-pass` (after you have updated the IP in hosts).
 
-> 17. `sudo nano set_up_app.yml` and insert these commands:
+> 16. `sudo nano set_up_app.yml` and insert these commands:
 
 ```yaml
 ---
@@ -238,11 +236,11 @@ ec2-instance-db ansible_host=ec2-34-245-27-166.eu-west-1.compute.amazonaws.com a
       tags: ['never', 'create_ec2']
 ```
 
-> 18. Run the command `sudo ansible-playbook playbook.yml --ask-vault-pass --tags create_ec2` and `sudo ansible-playbook set_up_app.yml --ask-vault-pass`.
+> 17. Run the command `sudo ansible-playbook playbook.yml --ask-vault-pass --tags create_ec2` and `sudo ansible-playbook set_up_app.yml --ask-vault-pass`.
 
-> 19. Go to the EC2's public IP. If it works, continue to the next part (seting up the DB). 
+> 18. Go to the EC2's public IP. If it works, continue to the next part (seting up the DB). 
 
-> 20. Create the following `set_up_ec2_db` file (remember the security group and subnet):
+> 19. Create the following `set_up_ec2_db` file (remember the security group and subnet):
 
 ```yaml
 ---
@@ -302,7 +300,7 @@ ec2-instance-db ansible_host=ec2-34-245-27-166.eu-west-1.compute.amazonaws.com a
       tags: ['never', 'create_ec2']
 ```
 
-> 21. `sudo nano set_up_db.yml`:
+> 20. `sudo nano set_up_db.yml`:
 
 ```yaml
 ---
@@ -354,8 +352,8 @@ ec2-instance-db ansible_host=ec2-34-245-27-166.eu-west-1.compute.amazonaws.com a
           bindIp: 0.0.0.0"
 ```
 
-> 22. Run the command `sudo ansible-playbook set_up_app.yml --ask-vault-pass` and check if you can access the /posts page.
+> 21. Run the command `sudo ansible-playbook set_up_app.yml --ask-vault-pass` and check if you can access the /posts page.
 
 ### Blockers
 
-> 1. If you can't access the posts page properly, go to the security group rules for the DB instance. For SSH, select My IP. Then add Type Custom TCP and for port put in 27017. Under Source, fill in the ip for your app EC2 instance, and add /32 at the end. For example: 52.51.222.118/32. Add a description that simply says app ip.
+If you can't access the posts page properly, go to the security group rules for the DB instance. For SSH, select My IP. Then add Type Custom TCP and for port put in 27017. Under Source, fill in the ip for your app EC2 instance, and add /32 at the end. For example: 52.51.222.118/32. Add a description that simply says app ip.
