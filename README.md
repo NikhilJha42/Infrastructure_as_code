@@ -78,3 +78,5 @@ Note: this documentation assumes familiarity with AWS.
 - `terraform plan` will raise any syntax errors or other problems.
 - If there are no errors, `terraform apply` will implement the .tf files.
 - Terraform state: When terraform apply is run, Terraform checks whether anything has changed in the .tf files. It then makes only the necessary changes, and leaves everything else.
+
+*this documentation only covers deploying the nodejs app without the database - this will be added later. The diagram above shows how the full application should be deployed.
