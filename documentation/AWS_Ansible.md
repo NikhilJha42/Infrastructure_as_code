@@ -1,5 +1,8 @@
 # Using AWS with Ansible
+
 These steps outline how to set up the node app with the database using AWS EC2. 
+
+![Ansible AWS](../diagrams/Ansible_AWS.png)
 
 > 1. Run these on your Controller VM to get the dependencies:
 ```bash

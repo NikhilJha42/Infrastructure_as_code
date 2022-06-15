@@ -1,6 +1,8 @@
 # Hybrid Architecture
 There are scenarios in which a database needs to be kept on business premises for security reasons. The below playbooks will set this hybrid system up.
 
+![Ansible Hybrid Architecture](../diagrams/Ansible_Hybrid.png)
+
 ## run_playbooks.yml
 
 ```yaml
