@@ -1,6 +1,6 @@
 # Infrastructure_as_code
 
-![Infrastructure as Code](./IaC_diagram.png)
+![Infrastructure as Code](./diagrams/IaC_diagram.png)
 
 This repository covers: 
 - The theory and benefits of Infrastructure as Code. 
