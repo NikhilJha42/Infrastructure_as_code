@@ -57,15 +57,17 @@ Pull and push models of configuration management
 - Push: Centralised server pushes configurations to the nodes.
 
 # Ansible
+
+![Ansible Set Up](./diagrams/Ansible_set_up.png)
+
 Dependencies: Vagrant and Virtual Box
 
 - [Set Up](./documentation/Ansible_set_up.md)
 - [Using AWS with Ansible](./documentation/AWS_Ansible.md)
 - [Hybrid architecture](./documentation/hybrid.md)
 
-![Ansible Set Up](./diagrams/Ansible_set_up.png)
-
 # Terraform
+![Terraform diagram](./diagrams/Terraform.png)
 - [Install terraform](https://www.terraform.io/downloads).
 - Make a directory and write the main.tf/network.tf/variables.tf files inside.
 - Run `terraform init`.
