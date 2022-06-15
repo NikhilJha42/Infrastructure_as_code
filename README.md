@@ -73,7 +73,7 @@ Note: this documentation assumes familiarity with AWS.
 
 - [Install terraform](https://www.terraform.io/downloads).
 - Ensure that you have an AMI for the node app on AWS.
-- Make a directory and write the main.tf/network.tf/variables.tf files inside - make sure to replace ami ids/key names.
+- Make a directory and write the main.tf/network.tf/variables.tf files inside (you can find the templates [here](./terraform-code/)) - make sure to replace ami ids/key names.
 - Run `terraform init`.
 - `terraform plan` will raise any syntax errors or other problems.
 - If there are no errors, `terraform apply` will implement the .tf files.
