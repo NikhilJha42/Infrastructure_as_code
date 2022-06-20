@@ -79,7 +79,7 @@ sudo apt-get update -y
 ```bash
 sudo apt-get install ansible
 ```
-> 5. SSH into the two other VMs with the command `ssh vagrant@192.168.33.10` and `ssh vagrant@192.168.33.11` from the controller VM to run update/upgrades.
+> 5. SSH into the two other VMs with the command `ssh vagrant@192.168.33.10` and `ssh vagrant@192.168.33.11` from the controller VM to check the connection.
 
 > 6. Return to the controller, and go to the directory `/etc/ansible`.
 
