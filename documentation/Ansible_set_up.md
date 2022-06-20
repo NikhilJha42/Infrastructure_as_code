@@ -221,6 +221,6 @@ vagrant scp <path to the app folder> controller:~/
       npm start
 ```
 
-> 19. Run the yml file with the command `ansible-playbook nginx.yml`.
+> 19. Run the yml file with the command `ansible-playbook app_test.yml`.
 
 > 20. Go to the web VM's ip in your browser and check if it works.
