@@ -103,7 +103,15 @@ sudo apt-get install ansible
 > 13. In your local host, run this command: `vagrant plugin install vagrant-scp
 `.
 
-> 14. Move the app folder to your VM controller with this command: `vagrant scp <some_local_file_or_dir> [vm_name]:<somewhere_on_the_vm>`. 
+> 14. Move the app folder to your VM controller. You will need to return to your local machine (or just use another terminal) and install the vagrant scp plugin:
+
+```bash
+vagrant plugin install vagrant-scp
+```
+and then copy the file:
+```bash
+vagrant scp <path to the app folder> controller:~/
+``` 
 
 > 15. Move the app folder between different VMs with this command: `ansible web -m copy -a 'src=/home/vagrant/app dest=~/.'`. 
 
