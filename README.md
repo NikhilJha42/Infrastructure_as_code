@@ -25,6 +25,7 @@ What are the benefits?
 
 What tools are available?
 
+- Ansible
 - Terraform
 - AWS CloudFormation
 - Azure Resource Manager
