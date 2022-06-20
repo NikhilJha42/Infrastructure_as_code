@@ -62,16 +62,24 @@ Vagrant.configure("2") do |config|
 ```
 > 2. Run `vagrant up`.
 
-> 3. ssh into the controller (using `vagrant ssh controller` etc.) and run update/upgrade commands.
+> __Potential Blocker__: You may need to add `web.vm.boot_timeout = 600` within the `config.vm.define "web" do |web|` box if a timeout error occurs. Run `vagrant destroy` first, make the addition, and then try `vagrant up` again.
+
+> 3. ssh into the controller (using `vagrant ssh controller`) and run update/upgrade commands.
 
 > 4. Run these commands in the `controller` VM:
 ```bash
 sudo apt-get install software-properties-common
+```
+```bash
 sudo apt-add-repository ppa:ansible/ansible
+```
+```bash
 sudo apt-get update -y
+```
+```bash
 sudo apt-get install ansible
 ```
-> 5. SSH into the two other VMs with the command `ssh vagrant@192.168.33.11` and `ssh vagrant@192.168.33.12` from the controller VM.
+> 5. SSH into the two other VMs with the command `ssh vagrant@192.168.33.10` and `ssh vagrant@192.168.33.11` from the controller VM to run update/upgrades.
 
 > 6. Return to the controller, and go to the directory `/etc/ansible`.
 
