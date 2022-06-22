@@ -67,6 +67,42 @@ Dependencies: Vagrant and Virtual Box
 - [Using AWS with Ansible](./documentation/AWS_Ansible.md)
 - [Hybrid architecture](./documentation/hybrid.md)
 
+## YAML
+
+YAML files are used for representing data, and are used for writing Ansible playbooks. Correct spacing is _vital_ for YAML files to work.
+- Key-value pairs:
+  ```yaml
+  Key1: Value1
+  Key2: Value2
+  ```
+- Arrays:
+  ```yaml
+  Array1:
+  -  Value1
+  -  Value2
+
+  Array2:
+  -  ValueA
+  -  Value B
+  ```
+- Dictionaries:
+   ```yaml
+   Dict1:
+     Key1: Value1
+     Key2: Value2
+   ```
+- Combining all three:
+  ```yaml
+  Array1:
+    -  Dict1:
+         Key1: Value1
+         Key2: Value2
+    -  Dict2:
+         KeyA: ValueA
+         KeyB: ValueB
+  ```
+- 
+
 # Terraform
 ![Terraform diagram](./diagrams/Terraform.png)
 
