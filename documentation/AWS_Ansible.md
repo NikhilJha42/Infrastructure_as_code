@@ -52,8 +52,6 @@ ec2_secret_key: keyhere
 
 > 11. Run `sudo chmod 400 file.pem`.
 
-> 12. Try to edit the key to check that it is read only.
-
 > 13. In hosts, add the following lines (later you will need to replace the relevant information for ips/keys):
 ```
 [local]
