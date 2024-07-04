@@ -1,4 +1,4 @@
-# Infrastructure_as_code
+# Infrastructure as Code
 
 ![Infrastructure as Code](./diagrams/IaC_diagram.png)
 
